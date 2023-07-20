@@ -1,0 +1,8 @@
+:root{
+    --color1: #c9abab;
+    --color2: #f2eded;
+}
+header{
+    padding: 50px;
+    background: var(--color1);
+}
