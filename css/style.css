@@ -1,8 +1,7 @@
 :root{
-    --color1: #c9abab;
-    --color2: #f2eded;
+    --color2: #3b6deb;
 }
 header{
     padding: 50px;
-    background: var(--color1);
+    background: var(--color2);
 }

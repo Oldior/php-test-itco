@@ -24,7 +24,6 @@
                 <div class="row">
                     <div class="col12">
                         <h3 class="text-white">Редактирование информации</h3>
-                        <a class="btn btn-primary" href="index.php">Список проектов</a>
                     </div>
                 </div>
             </div>
@@ -58,7 +57,16 @@
                                     <input type="file" name="image" class="form-control">
 
                                     <br>
-                                    <input type="submit" class="btn btn-success form-control" value="Сохранить">
+                                    <div class="container text-center">
+                                        <div class="row align-items-start">
+                                            <div class="col">
+                                            <input type="submit" class="btn btn-success form-control" value="Сохранить">
+                                            </div>
+                                            <div class="col">
+                                            <a class="btn btn-primary form-control" href="index.php">К списку проектов</a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
                         </div>

@@ -19,25 +19,7 @@
             $pdo->exec($query);
         }   
         
-        public function insert($query){
-            $pdo = new PDO('sqlite:db/projects.db');
-            $result = $pdo->query($query);
-            return $result;
-        }
-
-        public function select($query){
-            $pdo = new PDO('sqlite:db/projects.db');
-            $result = $pdo->query($query);
-            return $result;
-        }
-
-        public function update($query){
-            $pdo = new PDO('sqlite:db/projects.db');
-            $result = $pdo->query($query);
-            return $result;
-        }
-
-        public function delete($query){
+        public function query($query){
             $pdo = new PDO('sqlite:db/projects.db');
             $result = $pdo->query($query);
             return $result;

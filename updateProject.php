@@ -9,7 +9,12 @@
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         $project = $pr->updateProject($_POST, $_FILES, $id);
+        if (!empty($_POST['deleteImage'])){
+            $project = $pr->deleteImage($id);
+        }
     }
+
+    
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +33,6 @@
                 <div class="row">
                     <div class="col12">
                         <h3 class="text-white">Редактирование информации</h3>
-                        <a class="btn btn-primary" href="index.php">Список проектов</a>
                     </div>
                 </div>
             </div>
@@ -65,10 +69,29 @@
                             
                                     <label for="">Изображение</label>
                                     <input type="file" name="image" class="form-control">
-                                    <img src="<?=$row['image']?>" style="width: 200px;" class="img-thumbnail" alt="">
-
                                     <br>
-                                    <input type="submit" class="btn btn-success form-control" value="Сохранить">
+                                    <div class="container text-center">
+                                        <div class="row align-items-center">
+                                            <div class="col">
+                                            <img src="<?=$row['image']?>" style="width: 200px;" class="img-thumbnail" alt="">
+                                            </div>
+                                            <div class="col">
+                                                <label>Удалить изображение</label>
+                                                <input type="checkbox" name="deleteImage" value="<?=$row['id']?>">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="container text-center">
+                                        <div class="row align-items-start">
+                                            <div class="col">
+                                            <input type="submit" class="btn btn-success form-control" value="Сохранить">
+                                            </div>
+                                            <div class="col">
+                                            <a class="btn btn-primary form-control" href="index.php">К списку проектов</a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </form>
                                     <?php
                                     }

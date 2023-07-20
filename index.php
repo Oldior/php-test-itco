@@ -6,7 +6,7 @@
         $all_id = $_POST['checkbox_id'];
         $extract_id = implode(', ', $all_id);
         $deleteProject = $pr->deleteProject($extract_id);
-        header("Location:index.php");
+        //header("Location:index.php");
     }
 ?>
 
@@ -52,7 +52,7 @@
                                             ?>
                                             <tr>
                                                 <td><input type="checkbox" name="checkbox_id[]" value="<?=$row['id'];?>"></td>
-                                                <td><a href="updateProject.php?id=<?=base64_encode($row['id'])?>"><?=$row['name']?></a></td>
+                                                <td><a class="link-underline link-underline-opacity-0" href="updateProject.php?id=<?=base64_encode($row['id'])?>"><?=$row['name']?></a></td>
                                                 <td><?=$row['description']?></td>
                                                 <td><img style="width: 100px;"src="<?=$row['image']?>" class="img-fluid rounded mx-auto d-block" alt=""></td>
                                             </tr>
