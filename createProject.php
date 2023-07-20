@@ -21,8 +21,8 @@
     <body>
         <header>
             <div class="container">
-                <div class="row">
-                    <div class="col12">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-7">
                         <h3 class="text-white">Редактирование информации</h3>
                     </div>
                 </div>

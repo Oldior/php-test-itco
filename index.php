@@ -18,13 +18,13 @@
         <meta name="viewport" content='width=device-width, initial-scale=1.0'>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
-        <title>Список проектов</title>
+        <title class="">Список проектов</title>
     </head>
     <body>
         <header>
             <div class="container">
-                <div class="row">
-                    <div class="col12">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-7">
                         <h3 class="text-white">Список проектов</h3>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
             <br>
             <div class="container">
                 <div class="row d-flex justify-content-center">
-                    <div class="col-md-8">
+                    <div class="col-md-7">
                         <div class="card shadow">
                             <div class="card-body">
                                 <form method="POST" action="">
