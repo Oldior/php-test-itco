@@ -71,6 +71,68 @@
             $del = $this->db->delete($del_query);
         }
 
+        public function updateProject($data, $file, $id){
+            $name = $data['name'];
+            $description = $data['description'];
+
+            $permitted = array('jpg', 'jpeg', 'png', 'gif');
+            $file_name = $file['image']['name'];
+            $file_temp = $file['image']['tmp_name'];
+
+            $div = explode('.', $file_name);
+            $file_ext = strtolower(end($div));
+            $unique_image = substr(md5(time()),0,10).'.'.$file_ext;
+            $upload_image = "upload/".$unique_image;
+
+            if (empty($name) || empty($description)){
+                $msg = "Поля должны быть заполнены";
+                return $msg;
+            }if (!empty($file_name)) {
+                if((!empty($file_ext)) && (in_array($file_ext, $permitted) == false)){
+                $msg = "Можно загружать только изображения формата: ".implode(', ', $permitted);
+                return $msg;
+                }else {
+
+                    $img_query = "SELECT * FROM projects WHERE id = '$id'";
+                    $img_res = $this->db->select($img_query);
+                    if ($img_res) {
+                        while ($row = $img_res->fetch()){
+                            $image = $row['image'];
+                            unlink($image);
+                        }
+                    }
+                
+
+                    move_uploaded_file($file_temp, $upload_image);
+
+                    $query = "UPDATE projects SET name='$name', description='$description', image='$upload_image' WHERE id = '$id'";
+
+                    $result = $this->db->update($query);
+
+                    if ($result) {
+                       $msg = "Редактирование успешно";
+                      return $msg;
+                    }else {
+                        $msg = "Ошибка редактирования";
+                        return $msg;
+                    }
+                }
+            }else {
+                $query = "UPDATE projects SET name='$name', description='$description' WHERE id = '$id'";
+
+                $result = $this->db->update($query);
+
+                if ($result) {
+                    $msg = "Редактирование успешно";
+                    return $msg;
+                }else{
+                    $msg = "Ошибка редактирования";
+                    return $msg;
+                }
+            }
+
+        }
+
     }
 
 ?>

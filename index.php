@@ -52,7 +52,7 @@
                                             ?>
                                             <tr>
                                                 <td><input type="checkbox" name="checkbox_id[]" value="<?=$row['id'];?>"></td>
-                                                <td><?=$row['name']?></td>
+                                                <td><a href="updateProject.php?id=<?=base64_encode($row['id'])?>"><?=$row['name']?></a></td>
                                                 <td><?=$row['description']?></td>
                                                 <td><img style="width: 100px;"src="<?=$row['image']?>" class="img-fluid rounded mx-auto d-block" alt=""></td>
                                             </tr>
@@ -62,7 +62,7 @@
                                     ?>
                                 </table>
                                 <button type="submit" name="deleteProject" class="btn btn-primary" onclick="return confirm('Подтвердите удаление')" >Удалить</button>
-                                <a class="btn btn-primary" href="changeProject.php">Создать</a>
+                                <a class="btn btn-primary" href="createProject.php">Создать</a>
                                 </form>
                             </div>
                         </div>

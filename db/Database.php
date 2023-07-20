@@ -31,6 +31,12 @@
             return $result;
         }
 
+        public function update($query){
+            $pdo = new PDO('sqlite:db/projects.db');
+            $result = $pdo->query($query);
+            return $result;
+        }
+
         public function delete($query){
             $pdo = new PDO('sqlite:db/projects.db');
             $result = $pdo->query($query);
