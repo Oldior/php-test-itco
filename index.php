@@ -6,7 +6,7 @@
         $all_id = $_POST['checkbox_id'];
         $extract_id = implode(', ', $all_id);
         $deleteProject = $pr->deleteProject($extract_id);
-        //header("Location:index.php");
+        header("Location: index.php");
     }
 ?>
 

@@ -26,7 +26,7 @@
             }else {$upload_image ="";}
 
             if (empty($name) || empty($description)){
-                $msg = "Поля должны быть заполнены";
+                $msg = "Название и описание должны быть заполнены";
                 return $msg;
             }elseif((!empty($file_ext)) && (in_array($file_ext, $permitted) == false)){
                 $msg = "Можно загружать только изображения формата: ".implode(', ', $permitted);

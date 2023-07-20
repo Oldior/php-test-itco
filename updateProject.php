@@ -8,10 +8,10 @@
     }
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-        $project = $pr->updateProject($_POST, $_FILES, $id);
         if (!empty($_POST['deleteImage'])){
             $project = $pr->deleteImage($id);
         }
+        $project = $pr->updateProject($_POST, $_FILES, $id);
     }
 
     
